@@ -17,11 +17,11 @@ public class SpawnedCube : MonoBehaviour
     {
         // check if collision happens between this object and the main player.
         if (collisionInfo.gameObject.name == "MainPlayer")
-        {
-            Soundclip.Play();
+        {            
             var screenCanv = GameObject.Find("Alert");
             screenCanv.transform.Find("Panel").gameObject.transform.Find("Message").GetComponent<Text>().text = "Ooops ! You hit a cube, please try again.";
             screenCanv.transform.Find("Panel").gameObject.SetActive(true);
+            Soundclip.Play();
             MainPlayer.SetActive(false);            
         }
     }
